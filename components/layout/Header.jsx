@@ -2,8 +2,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import Search from "./Search";
+import CartContext from "@/context/CartContext";
+import { useContext } from "react";
 
 const Header = () => {
+
+  const { cart } = useContext(CartContext);
+  const cartItems = cart?.cartItems;
+
+
   return (
     <header className="bg-white py-2 border-b">
       <div className="container max-w-screen-xl mx-auto px-4">
@@ -25,7 +32,7 @@ const Header = () => {
               className="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300">
               <i className="text-gray-400 w-5 fa fa-shopping-cart"></i>
               <span className="hidden lg:inline ml-1">
-                Cart (<b>0</b>)
+                Cart (<b>{cartItems?.length||0}</b>)
               </span>
             </Link>
             <Link href="/login"
