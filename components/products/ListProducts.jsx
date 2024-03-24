@@ -1,5 +1,6 @@
 "use client";
 
+import CustomPagination from "../layout/CustomPagination";
 import Filters from "../layout/Filters";
 // import Header from "../layout/Header";
 import ProductItem from "./ProductItem";
@@ -17,6 +18,7 @@ const ListProducts = ({data}) => {
               {data?.products?.map((product)=>(
                 <ProductItem product={product} key={product._id}/>
               ))}
+              <CustomPagination resPerPage={data?.resPerPage} productsCount={data?.filteredProductsCount}/>
             </main>
           </div>
         </div>

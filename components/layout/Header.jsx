@@ -15,6 +15,7 @@ const Header = () => {
                 height="40"
                 width="120"
                 alt="BuyItNow"
+                className="ml-6"
               />
             </a>
           </div>
